@@ -9,6 +9,6 @@ console.log(App);
 console.log(YOUTUBE_API_KEY);
 
 ReactDOM.render(
-  <div>{title}</div>,
+  <App/>,
   document.getElementById('app')
 );

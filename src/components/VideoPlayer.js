@@ -1,16 +1,21 @@
 import React from 'react';
 
-const VideoPlayer = () => (
-  <div className="video-player">
-    <div className="embed-responsive embed-responsive-16by9">
-      <iframe className="embed-responsive-item"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" allowFullScreen></iframe>
+const VideoPlayer = ({ video }) => { //video 는 app에서 받아온다.
+  const { videoId } = video.id
+  const url = "https://www.youtube.com/embed/"
+  const { title, description } = video.snippet
+  return (
+    <div className="video-player">
+      <div className="embed-responsive embed-responsive-16by9">
+        <iframe className="embed-responsive-item"
+          src={url + videoId} allowFullScreen></iframe>
+      </div>
+      <div className="video-player-details">
+        <h3>{title}</h3>
+        <div>{description}</div>
+      </div>
     </div>
-    <div className="video-player-details">
-      <h3>Video Title</h3>
-      <div>Video Description</div>
-    </div>
-  </div>
-);
+  )
+};
 
 export default VideoPlayer;
